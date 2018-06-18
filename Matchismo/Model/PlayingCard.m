@@ -2,14 +2,14 @@
 
 @implementation PlayingCard
 
-@synthesize suit = _suit; // Obrigatório quando o get E o set são implementados
+@synthesize suit = _suit; // Is mandatory to "get" AND "set" custom implementations
 
 - (NSString *) contents {
     return [[PlayingCard rankStrings][self.rank] stringByAppendingString:self.suit];
 }
 
 + (NSArray *) validSuits {
-    return @[@"♥", @"♦", @"♠", @"♣"];
+    return @[@"♥", @"♦", @"♠", @"♣"]; // Use @[] to initiate arrays. Insert special characters by edit/emoji & symbols menu.
 }
 
 - (void) setSuit: (NSString *)suit {

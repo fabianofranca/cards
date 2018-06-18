@@ -1,8 +1,8 @@
 #import "Deck.h"
 
-// Propriedades e métodos privados devem ser declarados nesse bloco
+// Define private properties
 @interface Deck()
-@property (strong, nonatomic) NSMutableArray *cards;
+@property (nonatomic) NSMutableArray *cards;
 @end
 
 @implementation Deck

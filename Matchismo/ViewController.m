@@ -2,9 +2,9 @@
 #import "Model/PlayingCardDeck.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *flipsLabel; // UILabel has a strong pointer with view. The ViewControler can has a weak pointer.
 @property (nonatomic) int flipCount;
-@property (strong, nonatomic) PlayingCardDeck *deck;
+@property (nonatomic) PlayingCardDeck *deck;
 @end
 
 @implementation ViewController
@@ -19,7 +19,7 @@
     
     self.flipsLabel.text = [NSString stringWithFormat:@"Flips: %d", self.flipCount];
     
-    NSLog(@"flipCount = %d", self.flipCount); // Logar mensagem no console
+    NSLog(@"flipCount = %d", self.flipCount); // Log mesage in console
 }
 
 - (IBAction)touchCardButton:(UIButton *)sender {
