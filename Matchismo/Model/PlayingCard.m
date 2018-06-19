@@ -4,6 +4,21 @@
 
 @synthesize suit = _suit; // Is mandatory to "get" AND "set" custom implementations
 
+- (int)match:(NSArray *)otherCards {
+    int score = 0;
+    
+    if ([otherCards count] == 1) {
+        PlayingCard *other = [otherCards firstObject];
+        if ([self.suit isEqualToString:other.suit]) {
+            score = 1;
+        } else if (self.rank == other.rank) {
+            score = 4;
+        }
+    }
+    
+    return score;
+}
+
 - (NSString *) contents {
     return [[PlayingCard rankStrings][self.rank] stringByAppendingString:self.suit];
 }
