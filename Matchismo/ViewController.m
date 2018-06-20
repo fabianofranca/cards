@@ -25,7 +25,18 @@
     NSUInteger cardIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:cardIndex];
     [self updateUI];
-    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", (int)self.game.score];
+    
+    [self updateScore:self.game.score];
+}
+
+- (void)updateScore: (NSInteger)score {
+    NSString *string = [NSString stringWithFormat:@"Score: %d", (int)score];
+    UIColor *color = [UIColor redColor];
+    
+    NSAttributedString *scoreString = [[NSAttributedString alloc] initWithString:string
+                                                                      attributes:@{NSForegroundColorAttributeName : color}];
+    
+    self.scoreLabel.attributedText = scoreString;
 }
 
 - (void)updateUI {
